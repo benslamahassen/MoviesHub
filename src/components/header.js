@@ -19,6 +19,7 @@ const Header = ({ siteTitle }) => (
             color: 'white',
             textDecoration: 'none',
             fontSize: '2rem',
+						maxHeight: '50px'
           }}
           className="mr-3"
         >
@@ -26,7 +27,7 @@ const Header = ({ siteTitle }) => (
         </Link>
         <div>
           <Link
-            to="/page-2/"
+            to="/search/"
             style={{
               color: 'white',
               textDecoration: 'none',
@@ -37,18 +38,7 @@ const Header = ({ siteTitle }) => (
             Search
           </Link>
           <Link
-            to="/page-3/"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-              fontSize: '1.3rem',
-            }}
-            className="mr-3"
-          >
-            Favorites
-          </Link>
-          <Link
-            to="/page-4/"
+            to="/about/"
             style={{
               color: 'white',
               textDecoration: 'none',

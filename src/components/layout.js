@@ -30,15 +30,10 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            paddingTop: 0,
-          }}
-        >
+        <div className='content'>
           {children}
         </div>
-				<footer style={{backgroundColor:'#ee6e73'}} className="p-4">
+				<footer style={{backgroundColor:'#ee6e73', maxHeight: '200px'}} className="p-4">
           <div className="container">
             <div className="row">
               <div className="col">

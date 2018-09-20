@@ -1,15 +1,15 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import Movie from '../components/MovieCard'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Layout from '../components/layout'
 import Prismic from 'prismic-javascript'
 import { UncontrolledCarousel } from 'reactstrap'
-import config from '../../config.json';
+import config from '../../config.json'
 
-const apiEndpoint =  config.apiEndpoint;
-const apiToken = config.accessToken;
+const apiEndpoint = config.apiEndpoint
+const apiToken = config.accessToken
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
@@ -39,8 +39,8 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    let moviesCards = 'Loading Movies...'
-    let carosel = 'Loading Images ! ...'
+    let moviesCards = (<p className="text-center my-4 w-100">Loading All Movies..</p>);
+    let carosel = (<p className="text-center my-4 w-100">Loading All Posters..</p>);
     if (this.state.movies.length > 0) {
       carosel = (
         <UncontrolledCarousel
@@ -55,15 +55,13 @@ class IndexPage extends React.Component {
       )
       moviesCards = this.state.movies.map((movie, index) => {
         return (
-          <Link key={index} to={'/movie?uid='+movie.uid}>
-            <div className="card shadow m-4 mx-3" style={{ width: '18rem' }}>
-              <img className="card-img-top" src={movie.src} alt="Movie" />
-              <div className="card-body">
-                <h5 className="card-title">{movie.caption}</h5>
-                <p className="card-text text-truncate">{movie.description}</p>
-              </div>
-            </div>
-          </Link>
+          <Movie
+            key={index}
+            uid={movie.uid}
+            poster={movie.src}
+            title={movie.caption}
+            description={movie.description}
+          />
         )
       })
     }
