@@ -54,7 +54,7 @@ class IndexPage extends React.Component {
       )
       moviesCards = this.state.movies.map((movie, index) => {
         return (
-          <LazyLoad>
+          <LazyLoad height={250} key={index}>
             <Movie
               key={index}
               uid={movie.uid}
