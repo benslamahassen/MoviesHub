@@ -10,8 +10,8 @@ const apiToken = config.accessToken
 class Search extends React.Component {
   state = { key: '' }
 
-  searchHandler = e => {
-    this.setState({ key: e.target.value })
+  searchHandler = async e => {
+		await this.setState({ key: e.target.value })
     console.log(this.state.key)
     Prismic.getApi(apiEndpoint, { accessToken: apiToken })
       .then(api => {
