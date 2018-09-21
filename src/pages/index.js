@@ -3,6 +3,7 @@ import Movie from '../components/MovieCard'
 import Layout from '../components/layout'
 import Prismic from 'prismic-javascript'
 import { UncontrolledCarousel } from 'reactstrap'
+import LazyLoad from 'react-lazyload'
 import config from '../../config.json'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -37,9 +38,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    let moviesCards = (
-      <div className="lds-dual-ring"></div>
-    )
+    let moviesCards = <div className="lds-dual-ring" />
     let carosel = ''
     if (this.state.movies.length > 0) {
       carosel = (
@@ -55,22 +54,22 @@ class IndexPage extends React.Component {
       )
       moviesCards = this.state.movies.map((movie, index) => {
         return (
-          <Movie
-            key={index}
-            uid={movie.uid}
-            poster={movie.src}
-            title={movie.caption}
-            description={movie.description}
-          />
+          <LazyLoad>
+            <Movie
+              key={index}
+              uid={movie.uid}
+              poster={movie.src}
+              title={movie.caption}
+              description={movie.description}
+            />
+          </LazyLoad>
         )
       })
     }
     return (
       <Layout>
         {carosel}
-        <div
-          className="row p-0 m-0 justify-content-around align-items-center px-2 flex-wrap"
-        >
+        <div className="row p-0 m-0 justify-content-around align-items-center px-2 flex-wrap">
           {moviesCards}
         </div>
       </Layout>
