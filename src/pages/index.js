@@ -1,12 +1,10 @@
 import React from 'react'
 import Movie from '../components/MovieCard'
-
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 import Layout from '../components/layout'
 import Prismic from 'prismic-javascript'
 import { UncontrolledCarousel } from 'reactstrap'
 import config from '../../config.json'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const apiEndpoint = config.apiEndpoint
 const apiToken = config.accessToken
@@ -39,8 +37,10 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    let moviesCards = (<p className="text-center my-4 w-100">Loading All Movies..</p>);
-    let carosel = (<p className="text-center my-4 w-100">Loading All Posters..</p>);
+    let moviesCards = (
+      <div className="lds-dual-ring"></div>
+    )
+    let carosel = ''
     if (this.state.movies.length > 0) {
       carosel = (
         <UncontrolledCarousel
@@ -68,7 +68,9 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         {carosel}
-        <div className="row p-0 m-0 justify-content-around align-items-center px-2 flex-wrap">
+        <div
+          className="row p-0 m-0 justify-content-around align-items-center px-2 flex-wrap"
+        >
           {moviesCards}
         </div>
       </Layout>

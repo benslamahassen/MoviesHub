@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import config from '../../config.json'
 import Prismic from 'prismic-javascript'
 import Movie from '../components/MovieCard'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const apiEndpoint = config.apiEndpoint
 const apiToken = config.accessToken
@@ -11,7 +12,7 @@ class Search extends React.Component {
   state = { key: '' }
 
   searchHandler = async e => {
-		await this.setState({ key: e.target.value })
+    await this.setState({ key: e.target.value })
     console.log(this.state.key)
     Prismic.getApi(apiEndpoint, { accessToken: apiToken })
       .then(api => {
@@ -37,9 +38,12 @@ class Search extends React.Component {
       .catch(err => console.log(err))
   }
   render() {
-    let moviesCards = (<p className="text-center my-4 w-100">Search a Movie...</p>)
-    if (this.state.movies) {
-      moviesCards = this.state.movies.map((movie, index) => {
+    const movies = this.state.movies
+    let moviesCards = (
+      <h3 className="text-center my-4 w-100">Search a Movie...</h3>
+    )
+    if (movies && movies.length >= 0) {
+      moviesCards = movies.map((movie, index) => {
         return (
           <Movie
             key={index}
@@ -50,6 +54,11 @@ class Search extends React.Component {
           />
         )
       })
+      if (movies.length === 0) {
+        moviesCards = (
+          <h2 className="text-center my-5 w-100">No Movies Found. <br></br>Try to be more accurate :)</h2>
+        )
+      }
     }
     return (
       <Layout>
