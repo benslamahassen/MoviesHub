@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => (
           }}
           className="mr-3"
         >
-          {siteTitle}
+          <h2 className='m-0 p-0'>{siteTitle}</h2>
         </Link>
         <div>
           <Link

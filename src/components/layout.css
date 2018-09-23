@@ -1,11 +1,11 @@
 .lds-dual-ring {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 .lds-dual-ring:after {
-  content: " ";
+  content: ' ';
   display: block;
   width: 46px;
   height: 46px;
@@ -24,7 +24,6 @@
   }
 }
 
-
 .carousel-item {
   height: 400px !important;
 }
@@ -42,10 +41,13 @@
 .carousel-caption > p {
   display: none;
 }
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 .content {
-  margin: 0 auto;
-  padding-top: 0;
-  min-height: calc(100vh - 268px);
+  flex-grow: 1;
 }
 .error-page {
   display: flex;
