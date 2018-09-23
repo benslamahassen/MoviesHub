@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => (
         >
           <h2 className='m-0 p-0'>{siteTitle}</h2>
         </Link>
-        <div>
+        <h5 className='m-0 p-0 font-weight-normal'>
           <Link
             to="/search/"
             style={{
@@ -49,7 +49,7 @@ const Header = ({ siteTitle }) => (
           >
             About Us
           </Link>
-        </div>
+        </h5>
       </div>
     </div>
   </div>

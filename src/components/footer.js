@@ -13,7 +13,7 @@ const Footer = () => {
             <h4>We rock! Big Time! Check us out! now or never!</h4>
           </div>
           <div className="col-4 ml-auto">
-            <h5 className="text-white">Our associates</h5>
+            <h5 className="text-white m-0">Our associates</h5>
             <ul className="list-unstyled text-center">
               <li>
                   <h5>CodeHub</h5>
