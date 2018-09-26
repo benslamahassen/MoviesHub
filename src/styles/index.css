@@ -1,0 +1,51 @@
+.carousel-item {
+  height: 400px !important;
+}
+.carousel-caption {
+  width: 100vw;
+  margin: 0;
+  left: 0% !important;
+}
+.carousel-caption > h3 {
+  color: white;
+  text-align: center;
+  font-size: 3.5rem;
+  background-color: rgba(88, 81, 81, 0.6);
+}
+.carousel-caption > p {
+  display: none;
+}
+
+.movie__card {
+	color :black !important;
+	text-decoration: none !important;
+}
+
+.movie__card:hover {
+	color : #ee6e73 !important;
+}
+.lds-dual-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid red;
+  border-color: red transparent red transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

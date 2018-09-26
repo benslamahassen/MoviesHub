@@ -1,11 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import Footer from './footer'
-import './layout.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import '../styles/layout.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,6 +29,16 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+            rel="stylesheet"
+          />{' '}
         </Helmet>
         <div className="site">
           <Header siteTitle={data.site.siteMetadata.title} />

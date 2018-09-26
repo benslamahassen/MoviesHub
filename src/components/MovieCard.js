@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const MovieCard = props => {
   return (
-    <Link key={props.index} to={'/movie?uid=' + props.uid}>
+    <Link className='movie__card' key={props.index} to={'/movie?uid=' + props.uid}>
       <div className="card shadow m-4 mx-3" style={{ width: '18rem' }}>
         <img className="card-img-top" src={props.poster} alt="Movie" />
         <div className="card-body">

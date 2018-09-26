@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
-import '../components/layout.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import '../styles/404.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 
 const NotFoundPage = () => (
   <Layout>

@@ -62,14 +62,14 @@ class Search extends React.Component {
     }
     return (
       <Layout>
-        <div className="row m-0 p-0 justify-content-around align-items-center">
+        <div className="container-fluid d-flex flex-column justify-content-center align-items-center flex-nowrap">
           <input
             value={this.state.key}
-            className="form-control mx-5 p-2 my-3"
+            className="form-control p-2 my-3"
             placeholder="Type Movie Name"
             onChange={this.searchHandler}
           />
-          {moviesCards}
+          <div className='row '>{moviesCards}</div>
         </div>
       </Layout>
     )

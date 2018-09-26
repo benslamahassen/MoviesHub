@@ -5,7 +5,8 @@ import Prismic from 'prismic-javascript'
 import { UncontrolledCarousel } from 'reactstrap'
 import LazyLoad from 'react-lazyload'
 import config from '../../config.json'
-import 'bootstrap/dist/css/bootstrap.min.css'
+//import 'bootstrap/dist/css/bootstrap.min.css'
+import '../styles/index.css'
 
 const apiEndpoint = config.apiEndpoint
 const apiToken = config.accessToken
