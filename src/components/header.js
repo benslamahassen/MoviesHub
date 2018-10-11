@@ -20,8 +20,8 @@ const Header = ({ siteTitle }) => (
           <Link to="/search/" className="mr-3 text-white">
             Search
           </Link>
-          <Link to="/about/" className="mr-3 text-white">
-            About Us
+          <Link to="/browse/" className="mr-3 text-white">
+            Browse
           </Link>
         </h5>
       </div>

@@ -17,5 +17,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'movies-hub-api',
+        accessToken:
+          'MC5XNkZTaVNVQUFDVUE0N3I0.77-9LlJe77-9Re-_vV3vv70OCe-_vW0I77-9OSpzP--_vSfvv71177-977-977-9C--_vUTvv70wHw',
+      },
+    },
   ],
 }
